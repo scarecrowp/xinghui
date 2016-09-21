@@ -1,0 +1,47 @@
+//
+//  XHCreateGatherViewController.m
+//  XingHui
+//
+//  Created by gaoyuerui on 15/6/7.
+//  Copyright (c) 2015年 wangpei. All rights reserved.
+//
+
+#import "XHCreateGatherViewController.h"
+
+@interface XHCreateGatherViewController ()
+{
+    UIScrollView *scrollview;
+}
+@end
+
+@implementation XHCreateGatherViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setTitle:@"创建聚会"];
+    CGRect rect=_baseview.frame;
+    rect.size.width=SCREEN_WIDTH;
+    _baseview.frame=rect;
+    scrollview =[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    [scrollview setContentSize:_baseview.frame.size];
+    [scrollview addSubview:_baseview];
+    [self.view addSubview:scrollview];
+    // Do any additional setup after loading the view from its nib.
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

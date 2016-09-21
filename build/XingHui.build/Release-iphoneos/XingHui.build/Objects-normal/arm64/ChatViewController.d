@@ -1,0 +1,47 @@
+dependencies: \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/Class/Chat/ChatView/ChatViewController.m \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/Class/Chat/ChatView/ChatViewController.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Find/XHPersonDetsailViewController.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/SlimeRefresh/SRRefreshView.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/SlimeRefresh/SRSlimeView.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/Class/Chat/ChatView/MessageToolbar/MessageToolBarBottomView/MoreView/DXChatBarMoreView.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/Class/Chat/ChatView/MessageToolbar/MessageToolBarBottomView/RecordView/DXRecordView.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/Class/Chat/ChatView/MessageToolbar/MessageToolBarBottomView/FaceView/DXFaceView.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/Class/Chat/ChatView/MessageToolbar/MessageToolBarBottomView/FaceView/FacialView.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/Class/Chat/ChatView/MessageView/ChatCell/EMChatViewCell.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/Class/Chat/ChatView/MessageView/ChatCell/EMChatViewBaseCell.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/Class/Chat/ChatView/MessageView/MessageModel.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/Class/Chat/ChatView/MessageView/ChatCell/ChatCellBubble/EMChatBaseBubbleView.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/THProgressView/THProgressView.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/Category/UIResponder+Router.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/Class/Chat/ChatView/MessageView/ChatCell/ChatCellBubble/EMChatTextBubbleView.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/Class/Chat/ChatView/MessageView/ChatCell/ChatCellBubble/EMChatImageBubbleView.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/Class/Chat/ChatView/MessageView/ChatCell/ChatCellBubble/EMChatAudioBubbleView.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/Class/Chat/ChatView/MessageView/ChatCell/ChatCellBubble/EMChatVideoBubbleView.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/Class/Chat/ChatView/MessageView/ChatCell/ChatCellBubble/EMChatLocationBubbleView.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/Class/Chat/ChatView/MessageView/ChatCell/EMChatTimeCell.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/Class/Chat/ChatView/ChatSendHelper.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/Class/Chat/ChatView/MessageView/MessageReadManager.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/MWPhotoBrowser/Classes/MWPhotoBrowser.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/MWPhotoBrowser/Classes/MWPhoto.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/MWPhotoBrowser/Classes/MWPhotoProtocol.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/MWPhotoBrowser/Classes/MWCaptionView.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/Class/Chat/ChatView/MessageView/MessageModelManager.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/Class/Chat/ChatView/LocationViewController.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/Class/ChatGroup/ChatGroupDetailViewController.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/Categories/NSDate+Category.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/Class/Chat/ChatView/MessageToolbar/DXMessageToolBar.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/Custom/XHMessageTextView.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/Class/Chat/ChatView/ChatViewController+Category.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/Class/Chatroom/ChatroomDetailViewController.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/DeviceUtil/internal/EMCDDeviceManager.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/DeviceUtil/internal/EMCDDeviceManager+Media.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/DeviceUtil/internal/EMCDDeviceManagerBase.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/DeviceUtil/delegates/EMCDDeviceManagerDelegate.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/DeviceUtil/delegates/EMCDDeviceManagerProximitySensorDelegate.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/DeviceUtil/internal/EMCDDeviceManager+Remind.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/DeviceUtil/internal/EMCDDeviceManager+Microphone.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/DeviceUtil/internal/EMCDDeviceManager+ProximitySensor.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/Class/Profile/UserProfileViewController.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/Class/Core\ Data/UserProfileManager.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/commen/XHWebViewController.h

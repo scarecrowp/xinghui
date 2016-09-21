@@ -1,0 +1,15 @@
+//
+//  XHNetWork.h
+//  XingHui
+//
+//  Created by wangpei on 15/6/12.
+//  Copyright (c) 2015年 wangpei. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "MBProgressHUD.h"
+@interface XHNetWork : NSObject
++(void)NetWorkGet:(NSString *)url control:(BasicViewController *)control complete:(void (^)(NSMutableArray *arr))complete;
++(void)NetWorkPost:(NSString *)url parameters:(NSDictionary *)parameters control:(BasicViewController *)control complete:(void (^)(NSMutableArray *arr))complete
+;
+@end

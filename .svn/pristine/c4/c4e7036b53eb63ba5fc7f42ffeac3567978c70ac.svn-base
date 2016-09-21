@@ -1,0 +1,58 @@
+//
+//  XHHomeViewController.m
+//  XingHui
+//
+//  Created by wangpei on 15/5/9.
+//  Copyright (c) 2015年 wangpei. All rights reserved.
+//
+
+#import "XHHomeViewController.h"
+#import "XHHomeTableView.h"
+#import "XHLeftViewController.h"
+#import "MMDrawerController.h"
+#import "XHSetUpViewController.h"
+#import "UIViewController+MMDrawerController.h"
+@interface XHHomeViewController ()<ZXRightDelegate>
+
+@end
+
+@implementation XHHomeViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setTitle:@"幸会"];
+    [self.leftButton setImage:[UIImage imageNamed:@"home_left_menu"] forState:UIControlStateNormal];
+    XHHomeTableView *homeTable =[[XHHomeTableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    [self.view addSubview:homeTable];
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+-(void)leftButtonAction
+{
+    [self.tabBarController.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:^(BOOL isfinis){
+        if (isfinis) {
+            //  [self.rightButton setImage:[UIImage imageNamed:@"get_out-640p"] forState:UIControlStateNormal];
+            //  [self.rightButton setImage:[UIImage imageNamed:@"get_out_dark-640p"] forState:UIControlStateHighlighted];
+        }
+    }];
+}
+-(void)didViewControlTransfor:(UIViewController *)controll
+{
+    controll.hidesBottomBarWhenPushed=YES;
+    [self.navigationController pushViewController:controll animated:YES];
+}
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

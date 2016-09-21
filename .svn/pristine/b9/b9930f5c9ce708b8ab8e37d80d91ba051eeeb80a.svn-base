@@ -1,0 +1,23 @@
+//
+//  XHUser.h
+//  XingHui
+//
+//  Created by gaoyuerui on 15/6/2.
+//  Copyright (c) 2015年 wangpei. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface XHUser : NSObject
+@property(nonatomic,strong)NSString *uid;
+@property(nonatomic,strong)NSString *username;
+@property(nonatomic,strong)NSString *userpic;
+
+@property(nonatomic,strong)NSString *psw;
+@property(nonatomic,strong)NSString *tell;
+@property(nonatomic,strong)NSString *industry;
+@property(nonatomic,strong)NSString *job;
+@property(nonatomic,strong)NSString *company;
+@property(nonatomic,strong)NSString *birthday;
++ (XHUser *)sharedUser;
+@end

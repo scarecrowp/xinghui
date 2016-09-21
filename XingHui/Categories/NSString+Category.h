@@ -1,0 +1,24 @@
+//
+//  NSString+Category.h
+//  QiaoGu
+//
+//  Created by JackLiu on 14-8-27.
+//  Copyright (c) 2014年 ZXInsight. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface NSString (Category)
+
++ (NSString *)EncodingUTF8:(NSString *)string;
+
++ (NSString *)phonetic:(NSString*)sourceString;
++(NSString *)APIURLString:(NSString *)string;
++(NSString *)BASEUrlString:(NSString *)string ;
++(NSString *)PicUrlString:(NSString *)string;
++(NSString *)PicUrlString2:(NSString *)string;
+@end
+@interface  NSObject (StringCategory)
+-(NSString *)ToString;
+
+@end

@@ -1,0 +1,22 @@
+//
+//  XHGather.h
+//  XingHui
+//
+//  Created by wangpei on 15/6/9.
+//  Copyright (c) 2015年 wangpei. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
+@interface XHGather : NSObject
+-(id)initWithDic:(NSDictionary *)dic;
+@property(nonatomic,strong)NSString *title;
+@property(nonatomic,strong)NSString *img;
+@property(nonatomic,strong)NSString *distance;
+@property(nonatomic,strong)NSString *time;
+@property(nonatomic,strong)NSString *location;
+@property CLLocationCoordinate2D gpsCoordinate;
+@property(nonatomic,strong)NSArray *focusUsers;
+@property(nonatomic,strong)NSString *createrID;
+@property int type;//1:大型会议
+@end

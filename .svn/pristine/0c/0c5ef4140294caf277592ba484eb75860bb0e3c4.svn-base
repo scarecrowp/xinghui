@@ -1,0 +1,116 @@
+//
+//  XHLeftViewController.m
+//  XingHui
+//
+//  Created by wangpei on 15/6/4.
+//  Copyright (c) 2015年 wangpei. All rights reserved.
+//
+
+#import "XHLeftViewController.h"
+#import "XHFindItemTableViewCell.h"
+#import "UIImageView+WebCache.h"
+@interface XHLeftViewController ()<UITableViewDataSource,UITableViewDelegate>
+{
+    UITableView *tableview;
+    UIView *head;
+    NSArray *dataArr;
+    
+}
+@end
+
+@implementation XHLeftViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    tableview =[UITableView new];
+    [tableview setFrame:CGRectMake(0, 0, 260, SCREEN_HEIGHT)];
+    tableview.dataSource=self;
+    tableview.delegate=self;
+    [self.view addSubview:tableview];
+     dataArr =[JLCommonUtil getLeftItemArr];
+    head= [[UIView alloc] initWithFrame:CGRectMake(0, 0,self.view.frame.size.width, 76)];
+    UIImageView *img_head =[[UIImageView alloc] initWithFrame:CGRectMake(8, 8, 54, 54)];
+    [img_head sd_setImageWithURL:[NSURL URLWithString:[XHUser sharedUser].userpic] placeholderImage:[UIImage imageNamed:@"userpic"]];
+    [head addSubview:img_head];
+      img_head.layer.masksToBounds =YES;
+    img_head.layer.cornerRadius =27;
+    UILabel *lb_name =[[UILabel alloc] initWithFrame:CGRectMake(76, 15, 81, 21)];
+    lb_name.text = [XHUser sharedUser].username;
+    [lb_name setFont:[UIFont systemFontOfSize:15]];
+    [head addSubview:lb_name];
+    UILabel *lb_job =[[UILabel alloc] initWithFrame:CGRectMake(76, 37, 148, 21)];
+    lb_job.text =[XHUser sharedUser].job;
+    [lb_job setFont:[UIFont systemFontOfSize:13]];
+    lb_job.textColor=[UIColor ColorWithHexString:@"656566"];
+    [head addSubview:lb_job];
+    UIButton *bt_edit=[AciMath getButtonWithImage:@"bt_finishdata" frame:CGRectMake(230, 15, 43, 28) event:@selector(editUserinfo) target:self];
+    [head addSubview:bt_edit];
+    // Do any additional setup after loading the view from its nib.
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 7;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    XHFindItemTableViewCell *cell=  [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"XHLeftCell"]];
+    if (!cell) {
+        cell =[[XHFindItemTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"XHLeftCell" data:[dataArr objectAtIndex:indexPath.row] xibfile:@"XHLeftCell"];
+        
+    }
+    
+    return cell;
+}
+
+#pragma mark -s
+
+#pragma mark - UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    return cell.frame.size.height;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+ 
+        return head;
+        
+    
+}
+-(double)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (section==1) {
+        return 1;
+    }
+    return 76;
+}
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+-(void)editUserinfo
+{
+
+}
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

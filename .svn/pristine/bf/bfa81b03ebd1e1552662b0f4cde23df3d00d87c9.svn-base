@@ -1,0 +1,19 @@
+//
+//  XHHomeMeetingCell.h
+//  XingHui
+//
+//  Created by wangpei on 15/5/22.
+//  Copyright (c) 2015年 wangpei. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+@class XHGather;
+@interface XHHomeMeetingCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *pic_head;
+@property (weak, nonatomic) IBOutlet UILabel *lb_name;
+@property (weak, nonatomic) IBOutlet UILabel *lb_relation;
+@property (weak, nonatomic) IBOutlet UILabel *lb_title;
+@property (weak, nonatomic) IBOutlet UILabel *lb_location;
+@property (weak, nonatomic) IBOutlet UILabel *lb_time;
+-(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier data:(XHGather *)dic;
+@end

@@ -1,0 +1,28 @@
+//
+//  BasicViewController.h
+//  QiaoGu
+//
+//  Created by JackLiu on 14-8-11.
+//  Copyright (c) 2014年 ZXInsight. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "AppDelegate.h"
+@interface BasicViewController : UIViewController
+
+@property (nonatomic,strong)UIView *topNavView;
+@property (nonatomic,strong)UILabel *titleLabel;
+@property (nonatomic,strong)UIButton *leftButton;
+@property (nonatomic,strong)UIButton *rightButton;
+@property(nonatomic,strong)AppDelegate *delegate;
+@property (nonatomic)bool isEnterForeground;
+
+- (void)setTitle:(NSString *)title;
+- (void)leftButtonAction;
+- (void)rightButtonAction;
+- (void)topNavTapAction;
+//- (void)viewTapAction;
+-(void)ShowHUD;
+-(void)HideHUD;
+-(void)HideHUDAfter2S:(NSString *)desc;
+@end

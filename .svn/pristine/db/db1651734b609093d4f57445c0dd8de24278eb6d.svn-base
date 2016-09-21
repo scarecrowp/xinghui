@@ -1,0 +1,33 @@
+//
+//  XHTableViewCell.m
+//  XingHui
+//
+//  Created by wangpei on 15/6/5.
+//  Copyright (c) 2015年 wangpei. All rights reserved.
+//
+
+#import "XHTableViewCell.h"
+
+@implementation XHTableViewCell
+
+- (void)awakeFromNib {
+    // Initialization code
+}
+-(id)initWithView:(UIView *)view title:(NSString *)title
+{
+    self =[super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"XHTableViewCell"];
+    if (self) {
+        UILabel *lb_title =[[UILabel alloc] initWithFrame:CGRectMake(10, 5, 100, 25)];
+        lb_title.text =title;
+        [self.contentView addSubview:lb_title];
+        
+    }
+    return self;
+}
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+
+@end

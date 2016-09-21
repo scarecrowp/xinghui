@@ -1,0 +1,37 @@
+//
+//  XHUser.m
+//  XingHui
+//
+//  Created by gaoyuerui on 15/6/2.
+//  Copyright (c) 2015年 wangpei. All rights reserved.
+//
+
+#import "XHUser.h"
+
+@implementation XHUser
++(void)initUser
+{
+    NSDictionary *dic =[JLCommonUtil getUserInfo];
+    [XHUser sharedUser].username=[dic objectForKey:@"user_name"];
+    [XHUser sharedUser].tell=[dic objectForKey:@"user_mobile"];;
+    [XHUser sharedUser].userpic=[dic objectForKey:@"user_head"];;
+    [XHUser sharedUser].uid=[dic objectForKey:@"ID"];;
+    [XHUser sharedUser].job=[dic objectForKey:@"user_job"];
+    [XHUser sharedUser].company=[dic objectForKey:@"user_company"];
+    [XHUser sharedUser].sex=[dic objectForKey:@"user_sex"];
+
+}
++ (XHUser *)sharedUser
+{
+    static XHUser *user;
+    
+    @synchronized(self)
+    {
+        if (!user)
+            user = [[XHUser alloc] init];
+        
+        return user;
+    }
+}
+
+@end

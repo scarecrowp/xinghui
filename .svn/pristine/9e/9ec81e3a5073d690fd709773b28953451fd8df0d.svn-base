@@ -1,0 +1,119 @@
+//
+//  XHMyGatherViewController.m
+//  XingHui
+//
+//  Created by wangpei on 15/6/9.
+//  Copyright (c) 2015年 wangpei. All rights reserved.
+//
+
+#import "XHMyGatherViewController.h"
+#import "XHMyGatherTableViewCell.h"
+@interface XHMyGatherViewController ()<UITableViewDataSource,UITableViewDelegate>
+{
+    UITableView *tableview;
+    NSMutableArray *dataArr;
+    UILabel *lb_bottom;
+}
+@end
+
+@implementation XHMyGatherViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setTitle:@"我的活动"];
+    [self.view setBackgroundColor:[UIColor ColorWithHexString:@"d7d7d7"]];
+    UIButton *bt_left =[UIButton buttonWithType:UIButtonTypeCustom];
+    [bt_left setTitle:@"我发布的活动" forState:UIControlStateNormal];
+    [bt_left setTitleColor:[UIColor ColorWithHexString:@"3d3d3d"] forState:UIControlStateNormal];
+    [bt_left setFrame:CGRectMake(0, 64, SCREEN_WIDTH/2-1, 46)];
+    [bt_left setBackgroundColor:[UIColor whiteColor]];
+    [self.view addSubview:bt_left];
+    
+    UIButton *bt_right =[UIButton buttonWithType:UIButtonTypeCustom];
+    [bt_right setBackgroundColor:[UIColor whiteColor]];
+    [bt_right setTitle:@"我参与的活动" forState:UIControlStateNormal];
+    [bt_right setTitleColor:[UIColor ColorWithHexString:@"3d3d3d"] forState:UIControlStateNormal];
+    [bt_right setFrame:CGRectMake(SCREEN_WIDTH/2, 64, SCREEN_WIDTH/2-1, 46)];
+    [self.view addSubview:bt_right];
+    
+    lb_bottom=[[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(bt_right.frame)-2, SCREEN_WIDTH/2, 2)];
+    [lb_bottom setBackgroundColor:[AciMath getColor:@"3ec07b"]];
+    [self.view addSubview:lb_bottom];
+[bt_left addTarget:self action:@selector(leftclick) forControlEvents:UIControlEventTouchUpInside];
+    
+    [bt_right addTarget:self action:@selector(rightclick) forControlEvents:UIControlEventTouchUpInside];
+    dataArr =[JLCommonUtil getGatherArr];
+    tableview =[[UITableView alloc] initWithFrame:CGRectMake(0, 46+64, SCREEN_WIDTH, SCREEN_HEIGHT-46)];
+    tableview.delegate=self;
+    tableview.dataSource=self;
+    UIView *view =[[UIView alloc] init];
+    tableview.tableFooterView =view;
+    [self.view addSubview:tableview];
+    // Do any additional setup after loading the view.
+}
+-(void)toggleStatus:(id)sender
+{
+    
+}
+-(void)rightclick
+{
+    [UIView beginAnimations:nil context:nil];//动画开始
+    [UIView setAnimationDuration:0.1];
+    CGRect rect=lb_bottom.frame;
+    rect.origin.x=SCREEN_WIDTH/2;
+    lb_bottom.frame = rect;
+    [UIView commitAnimations];
+
+}
+-(void)leftclick
+{
+    [UIView beginAnimations:nil context:nil];//动画开始
+    [UIView setAnimationDuration:0.1];
+    CGRect rect=lb_bottom.frame;
+    rect.origin.x=0;
+    lb_bottom.frame = rect;
+    [UIView commitAnimations];
+
+}
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return dataArr.count;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    XHMyGatherTableViewCell *cell=  [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"XHMyGatherTableViewCell"]];
+    if (!cell) {
+        cell =[[XHMyGatherTableViewCell alloc] initWithGather:[dataArr objectAtIndex:indexPath.row]];
+        
+    }
+    return cell;
+}
+
+#pragma mark -s
+
+#pragma mark - UITableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

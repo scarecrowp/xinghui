@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XHMeViewControl">
+            <connections>
+                <outlet property="img_head" destination="49s-wK-rQW" id="ZLn-mF-p2s"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="未标题-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="bhA-cC-9AX">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="155"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="152" id="wca-ot-OWK"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YnV-tq-r3U">
+                    <rect key="frame" x="0.0" y="153" width="375" height="54"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="李彦宏" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyV-Ms-yVe">
+                            <rect key="frame" x="22" y="16" width="67" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="67" id="198-7e-kFl"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="| 百度公司创始人" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8FS-FZ-OYt">
+                            <rect key="frame" x="89" y="16" width="115" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="115" id="qmf-h8-dfy"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="yyV-Ms-yVe" firstAttribute="top" secondItem="YnV-tq-r3U" secondAttribute="top" constant="16" id="Hr7-fy-Cnb"/>
+                        <constraint firstItem="8FS-FZ-OYt" firstAttribute="leading" secondItem="yyV-Ms-yVe" secondAttribute="trailing" id="NsY-wT-nJa"/>
+                        <constraint firstItem="8FS-FZ-OYt" firstAttribute="bottom" secondItem="yyV-Ms-yVe" secondAttribute="bottom" id="PBi-zm-NzW"/>
+                        <constraint firstItem="yyV-Ms-yVe" firstAttribute="leading" secondItem="YnV-tq-r3U" secondAttribute="leading" constant="22" id="bea-M8-h78"/>
+                        <constraint firstItem="yyV-Ms-yVe" firstAttribute="top" secondItem="8FS-FZ-OYt" secondAttribute="top" id="mVw-SB-UCL"/>
+                        <constraint firstAttribute="bottom" secondItem="yyV-Ms-yVe" secondAttribute="bottom" constant="17" id="rP4-E7-IMS"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userpic@3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="49s-wK-rQW">
+                    <rect key="frame" x="263" y="107" width="82" height="82"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="82" id="1rc-ou-Smi"/>
+                        <constraint firstAttribute="width" constant="82" id="zre-xV-1nn"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="49s-wK-rQW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="107" id="EaU-Bm-97R"/>
+                <constraint firstItem="YnV-tq-r3U" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Gts-AC-gB1"/>
+                <constraint firstAttribute="trailing" secondItem="YnV-tq-r3U" secondAttribute="trailing" id="Ng3-PP-VCA"/>
+                <constraint firstAttribute="trailing" secondItem="49s-wK-rQW" secondAttribute="trailing" constant="30" id="a4P-jq-HM7"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="258.5" y="262.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="userpic@3x.png" width="205" height="205"/>
+        <image name="未标题-1.png" width="940" height="459"/>
+    </resources>
+</document>

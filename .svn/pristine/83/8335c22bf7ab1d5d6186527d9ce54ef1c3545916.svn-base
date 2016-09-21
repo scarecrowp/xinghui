@@ -1,0 +1,85 @@
+//
+//  XHNetWork.m
+//  XingHui
+//
+//  Created by wangpei on 15/6/12.
+//  Copyright (c) 2015年 wangpei. All rights reserved.
+//
+
+#import "XHNetWork.h"
+#import "AFNetworking.h"
+#import "MBProgressHUD.h"
+#import "JSONKit.h"
+@implementation XHNetWork
+
++(void)NetWorkGet:(NSString *)url control:(BasicViewController *)control complete:(void (^)(NSMutableArray *arr))complete
+{
+    [control ShowHUD];
+    AFHTTPRequestOperationManager *bClient = [AFHTTPRequestOperationManager manager];
+    bClient.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [bClient GET:url parameters:nil success:^(AFHTTPRequestOperation *operation,id responseObject)
+     {
+         
+         NSDictionary *dic =[responseObject objectFromJSONData];
+         if ([dic isKindOfClass:[NSDictionary class]])
+         {
+             
+             if (dic[@"result"]) {
+                 if ([dic[@"result"] isEqualToString:@"1"]) {
+                     [control HideHUD];
+                     complete(dic[@"content"]);
+                 }
+                 else
+                 {
+                     [control HideHUDAfter2S:dic[@"message"]];
+                 }
+                 
+             }
+             else
+             {
+                   [control HideHUDAfter2S:@"服务器错误!"];
+             }
+         }
+         
+     }failure:^(AFHTTPRequestOperation *operation,NSError *error){
+         //
+         [control HideHUDAfter2S:error.description];
+     }];
+
+}
++(void)NetWorkPost:(NSString *)url parameters:(NSDictionary *)parameters control:(BasicViewController *)control complete:(void (^)(NSMutableArray *dic))complete
+{
+    [control ShowHUD];
+    AFHTTPRequestOperationManager *bClient = [AFHTTPRequestOperationManager manager];
+    bClient.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [bClient POST:url parameters:nil success:^(AFHTTPRequestOperation *operation,id responseObject)
+     {
+         
+         NSDictionary *dic =[responseObject objectFromJSONData];
+         if ([dic isKindOfClass:[NSDictionary class]])
+         {
+             if (dic[@"result"]) {
+                 if ([dic[@"reslut"] isEqualToString:@"1"]) {
+                     complete(dic);
+                 }
+                 else
+                 {
+                     [control HideHUDAfter2S:dic[@"message"]];
+                 }
+                 
+             }
+             else
+             {
+                 [control HideHUDAfter2S:@"服务器错误!"];
+             }
+         }
+         
+     }failure:^(AFHTTPRequestOperation *operation,NSError *error){
+         //
+         [control HideHUDAfter2S:error.description];
+     }];
+    
+}
+
+
+@end

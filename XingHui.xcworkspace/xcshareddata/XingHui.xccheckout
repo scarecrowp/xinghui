@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0A7B6063-E3AC-4F68-A97C-1ED555D4BD69</string>
+	<key>IDESourceControlProjectName</key>
+	<string>XingHui</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1C66AC27E2F0184C79FCD22D39FCB7F44660D2E9</key>
+		<string>gitlab.com:smoly/xinghui.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>XingHui.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1C66AC27E2F0184C79FCD22D39FCB7F44660D2E9</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>gitlab.com:smoly/xinghui.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1C66AC27E2F0184C79FCD22D39FCB7F44660D2E9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1C66AC27E2F0184C79FCD22D39FCB7F44660D2E9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>xinghui</string>
+		</dict>
+	</array>
+</dict>
+</plist>

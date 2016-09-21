@@ -1,0 +1,23 @@
+//
+//  NSDate+MWDate.m
+//  MagicWindowSampleApp
+//
+//  Created by JackLiu on 14-7-23.
+//  Copyright (c) 2014年 MagicWindow. All rights reserved.
+//
+
+#import "NSDate+Category.h"
+
+@implementation NSDate (Category)
+
++ (NSString *)getStringFromDate:(NSDate *)date withFormat:(NSString *)format
+{
+    //yyyy-MM-dd HH:mm:ss
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:format];
+    NSTimeZone* timeZone = [NSTimeZone timeZoneWithName:@"Asia/Shanghai"];
+    [formatter setTimeZone:timeZone];
+    NSString *dateString = [formatter stringFromDate:date];
+    return dateString;
+}
+@end

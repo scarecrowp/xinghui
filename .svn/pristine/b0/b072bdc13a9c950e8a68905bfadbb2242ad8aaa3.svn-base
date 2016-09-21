@@ -1,0 +1,13 @@
+//
+//  XHCreateGatherViewController.h
+//  XingHui
+//
+//  Created by gaoyuerui on 15/6/7.
+//  Copyright (c) 2015年 wangpei. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface XHCreateGatherViewController : BasicViewController
+
+@end

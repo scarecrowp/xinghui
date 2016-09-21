@@ -1,0 +1,20 @@
+//
+//  XHSetUserNameViewController.h
+//  XingHui
+//
+//  Created by wangpei on 15/5/29.
+//  Copyright (c) 2015年 wangpei. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface XHSetUserNameViewController : BasicViewController
+- (IBAction)sextStep:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *lb_birthday;
+- (IBAction)select_birthday:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *tb_name;
+@property (weak, nonatomic) IBOutlet UITextField *tb_company;
+@property (weak, nonatomic) IBOutlet UITextField *tb_job;
+- (IBAction)select_industry:(id)sender;
+ 
+@end

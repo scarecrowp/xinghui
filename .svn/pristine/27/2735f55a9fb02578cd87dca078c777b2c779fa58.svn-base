@@ -1,0 +1,205 @@
+//
+//  AppDelegate.m
+//  XingHui
+//
+//  Created by wangpei on 15/5/9.
+//  Copyright (c) 2015年 wangpei. All rights reserved.
+//
+
+#import "AppDelegate.h"
+#import "XHHomeViewController.h"
+#import "XHBasicNavigationController.h"
+#import "XHFoundViewControl.h"
+#import "XHMessageViewControl.h"
+#import "XHMeViewControl.h"
+#import "AciMath.h"
+#import "XHTabBarItem.h"
+#import "XHLoginViewController.h"
+#import "EMSDKFull.h"
+#import "XHLeftViewController.h"
+#import "MMDrawerController.h"
+#import "MMDrawerVisualState.h"
+@class XHHomeViewController;
+@interface AppDelegate ()
+{
+    
+}
+@end
+
+@implementation AppDelegate
+@synthesize tabVC;
+@synthesize homeVC;
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    NSString *apnsCertName = @"xinghui";
+    [[EaseMob sharedInstance] registerSDKWithAppKey:@"smoly#xinghui" apnsCertName:apnsCertName];
+    // 需要在注册sdk后写上该方法
+    [[EaseMob sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+
+    
+    
+//    XHHomeViewController *home =[[XHHomeViewController alloc] init];
+//    self.window.rootViewController=home;
+//     [self.window makeKeyAndVisible];
+    tabVC = [[UITabBarController alloc] init];
+    tabVC.tabBar.barTintColor = [UIColor colorWithRed:35.0/255.0 green:35.0/255.0 blue:35.0/255.0 alpha:0.96];
+    
+    [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"tabSelect.png"] ];
+    
+    homeVC = [[XHHomeViewController alloc] init];
+    UINavigationController *nav0 = [[UINavigationController alloc] initWithRootViewController:homeVC];
+    homeVC.tabBarItem = [[XHTabBarItem alloc] initWithTitle:@"首页" image:@"home" tag:0 selectImg:@"home_select"];
+     
+    XHMessageViewControl *orderVC = [[XHMessageViewControl alloc] init];
+    UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:orderVC];
+    orderVC.tabBarItem = [[XHTabBarItem alloc] initWithTitle:@"消息" image:@"message" tag:1 selectImg:@"message_select"];
+    
+    XHFoundViewControl *messageVC = [[XHFoundViewControl alloc] init];
+    UINavigationController *nav2 = [[UINavigationController alloc] initWithRootViewController:messageVC];
+ 
+    messageVC.tabBarItem = [[XHTabBarItem alloc] initWithTitle:@"发现" image:@"find" tag:2 selectImg:@"find_select"];
+    
+    XHMeViewControl *wealthVC = [[XHMeViewControl alloc] init];
+    UINavigationController *nav3 = [[UINavigationController alloc] initWithRootViewController:wealthVC];
+ 
+    wealthVC.tabBarItem = [[XHTabBarItem alloc] initWithTitle:@"我的" image:@"me" tag:3 selectImg:@"me_select"];
+
+    
+    tabVC.viewControllers = @[nav0,nav1,nav2,nav3];
+    XHBasicNavigationController *nav = nil;
+    nav = [[XHBasicNavigationController alloc] initWithRootViewController:tabVC];
+    nav.navigationBarHidden = YES;
+    nav.hidesBottomBarWhenPushed = YES;
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 7.0)
+    {
+        [[UINavigationBar appearance] setBarTintColor:[UIColor ColorWithHexString:@"ffffff"]];
+        [[UINavigationBar appearance] setAlpha:1];
+        [[UINavigationBar appearance] setTitleTextAttributes:
+         [NSDictionary dictionaryWithObjectsAndKeys:[UIColor clearColor], NSForegroundColorAttributeName, [UIFont fontWithName:@ "HelveticaNeue-CondensedBlack" size:21.0], NSFontAttributeName, nil]];
+    }
+    else
+    {
+        nav.navigationBar.barStyle = UIBarStyleDefault;
+        [nav.navigationBar setBackgroundImage:[UIImage imageNamed:@"titleBar"]
+                                forBarMetrics:UIBarMetricsDefault];
+        [nav.navigationBar.layer setMasksToBounds:YES];
+    }
+    if ([JLCommonUtil isLogin]) {
+        nav = [[XHBasicNavigationController alloc] initWithRootViewController:tabVC];
+        XHLeftViewController *left =[[XHLeftViewController alloc] init];
+        left.delegate=homeVC;
+        MMDrawerController *drawerController = [[MMDrawerController alloc]
+                                                initWithCenterViewController:tabVC
+                                                leftDrawerViewController:left
+                                                rightDrawerViewController:nil];
+        [drawerController setMaximumLeftDrawerWidth:280];
+        [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+        [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+        
+        [drawerController
+         setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
+             MMDrawerControllerDrawerVisualStateBlock block;
+             block = [MMDrawerVisualState swingingDoorVisualStateBlock];
+             if(block){
+                 block(drawerController, drawerSide, percentVisible);
+             }
+         }];
+        [drawerController setCenterHiddenInteractionMode:MMDrawerOpenCenterInteractionModeNavigationBarOnly];
+      
+         self.window.rootViewController = drawerController;
+    }
+    else
+    {
+        
+        XHLoginViewController *login =[[XHLoginViewController alloc] init];
+           nav = [[XHBasicNavigationController alloc] initWithRootViewController:login];
+        //QGViewController *qg =[QGViewController new];
+         self.window.rootViewController = nav;
+    }
+    
+   
+    [self.window makeKeyAndVisible];
+
+    return YES;
+}
+//系统方法
+-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    //SDK方法调用
+    [[EaseMob sharedInstance] application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+//系统方法
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    //SDK方法调用
+    [[EaseMob sharedInstance] application:application didFailToRegisterForRemoteNotificationsWithError:error];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"注册推送失败"
+                                                    message:error.description
+                                                   delegate:nil
+                                          cancelButtonTitle:@"确定"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
+//自定义方法
+- (void)registerRemoteNotification
+{
+#if !TARGET_IPHONE_SIMULATOR
+    UIApplication *application = [UIApplication sharedApplication];
+    
+    //iOS8 注册APNS
+    if ([application respondsToSelector:@selector(registerForRemoteNotifications)]) {
+        [application registerForRemoteNotifications];
+        UIUserNotificationType notificationTypes = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:notificationTypes categories:nil];
+        [application registerUserNotificationSettings:settings];
+    }else{
+        UIRemoteNotificationType notificationTypes = UIRemoteNotificationTypeBadge |
+        UIRemoteNotificationTypeSound |
+        UIRemoteNotificationTypeAlert;
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:notificationTypes];
+    }
+    
+#endif
+}
+//系统方法
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    //SDK方法调用
+    [[EaseMob sharedInstance] application:application didReceiveRemoteNotification:userInfo];
+}
+//系统方法
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    //SDK方法调用
+    [[EaseMob sharedInstance] application:application didReceiveLocalNotification:notification];
+}
+- (void)applicationWillResignActive:(UIApplication *)application {
+    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
+    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+     [[EaseMob sharedInstance] applicationWillResignActive:application];
+}
+
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
+    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+      [[EaseMob sharedInstance] applicationDidEnterBackground:application];
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+      [[EaseMob sharedInstance] applicationWillEnterForeground:application];
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+     [[EaseMob sharedInstance] applicationDidBecomeActive:application];
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application {
+    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+     [[EaseMob sharedInstance] applicationWillTerminate:application];
+}
+@end

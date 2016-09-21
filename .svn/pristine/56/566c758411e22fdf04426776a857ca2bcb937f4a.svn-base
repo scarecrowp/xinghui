@@ -1,0 +1,32 @@
+//
+//  XHMyGatherTableViewCell.m
+//  XingHui
+//
+//  Created by wangpei on 15/6/9.
+//  Copyright (c) 2015年 wangpei. All rights reserved.
+//
+
+#import "XHMyGatherTableViewCell.h"
+#import "XHGather.h"
+@implementation XHMyGatherTableViewCell
+
+- (void)awakeFromNib {
+    // Initialization code
+}
+-(id)initwithGather:(XHGather *)gather
+{
+    self=[[[NSBundle mainBundle] loadNibNamed:@"XHMyGatherTableViewCell"owner:nil options:nil] objectAtIndex:0];
+    if (self) {
+        self.lb_distance.text =gather.distance;
+        self.lb_location.text=gather.location;
+        self.lb
+    }
+    return self;
+}
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+
+@end

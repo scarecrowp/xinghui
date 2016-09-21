@@ -1,0 +1,26 @@
+//
+//  ZXMySingleton.m
+//  QiaoGu
+//
+//  Created by medfocus on 14-11-13.
+//  Copyright (c) 2014年 ZXInsight. All rights reserved.
+//
+
+#import "ZXMySingleton.h"
+ 
+@implementation ZXMySingleton
+@synthesize goodArr;
++ (ZXMySingleton *)sharedSingleton
+{
+    static ZXMySingleton *sharedSingleton;
+    
+    @synchronized(self)
+    {
+        if (!sharedSingleton)
+            sharedSingleton = [[ZXMySingleton alloc] init];
+        
+        return sharedSingleton;
+    }
+}
+
+@end

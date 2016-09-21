@@ -1,0 +1,16 @@
+//
+//  ZXMySingleton.h
+//  QiaoGu
+//
+//  Created by medfocus on 14-11-13.
+//  Copyright (c) 2014年 ZXInsight. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface ZXMySingleton : NSObject
+
++ (ZXMySingleton *)sharedSingleton;
+@property(nonatomic,strong)NSMutableArray *goodArr;
+
+@end

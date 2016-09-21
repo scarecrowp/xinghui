@@ -1,0 +1,24 @@
+//
+//  XHGather.m
+//  XingHui
+//
+//  Created by wangpei on 15/6/9.
+//  Copyright (c) 2015年 wangpei. All rights reserved.
+//
+
+#import "XHGather.h"
+#import <CoreLocation/CoreLocation.h>
+@implementation XHGather
+-(id)initWithDic:(NSDictionary *)dic
+{
+    self=[super init];
+    self.title=[dic[@"mt_title"] ToString];
+    self.time=[dic[@"mt_begintime"] ToString];
+    self.location=[dic[@"mt_location"] ToString];
+    self.img=[dic[@"mt_picture"] ToString];
+    self.gpsCoordinate = CLLocationCoordinate2DMake([[dic objectForKey:@"mt_lat"]floatValue], [[dic objectForKey:@"mt_lon"]floatValue]);
+    self.focusUsers =[dic[@"mt_focus"] componentsSeparatedByString:@"*"];
+    self.createrID=[dic[@"mt_creater"] ToString];
+    return self;
+}
+@end

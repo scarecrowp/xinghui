@@ -1,0 +1,57 @@
+//
+//  XHHomePartyCell.m
+//  XingHui
+//
+//  Created by wangpei on 15/5/25.
+//  Copyright (c) 2015年 wangpei. All rights reserved.
+//
+
+#import "XHHomePartyCell.h"
+#import "XHGather.h"
+#import "UIImageView+WebCache.h"
+@implementation XHHomePartyCell
+
+- (void)awakeFromNib {
+    // Initialization code
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+-(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier data:(XHGather *)gather
+{
+    
+    self =  [[[NSBundle mainBundle] loadNibNamed:@"XHHomePartyCell"owner:nil options:nil] objectAtIndex:0];
+ 
+    if (self) {
+        [_pic_big sd_setImageWithURL:[NSURL URLWithString:[NSString BASEUrlString:gather.img]] placeholderImage:[UIImage imageNamed:@"top_img"]];
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        UIImageView *img =[[UIImageView alloc] initWithFrame:CGRectMake(7, 173, 51, 51)];
+        img.layer.masksToBounds=YES;
+        img.layer.cornerRadius =25;
+        [img sd_setImageWithURL:[NSURL URLWithString:gather.createrID] placeholderImage:[UIImage imageNamed:@"top_img"]];
+        [self.contentView addSubview:img];
+        int xi=74;int w =5;int yi=200;
+        for (int i=0; i<4; i++) {
+            UIImageView *hpic=[[UIImageView alloc] initWithFrame:CGRectMake(xi, yi, 18, 18)];
+            hpic.layer.masksToBounds=YES;
+            hpic.layer.cornerRadius=9;
+            [hpic setImage:[UIImage imageNamed:@"head_test"]];
+            xi=xi+w+18;
+            [self.contentView addSubview:hpic];
+        }
+        UILabel *lb_info=[[UILabel alloc] init];
+        lb_info.text=[NSString stringWithFormat:@"等%d位好友参加",4];
+        [lb_info setFont:[UIFont systemFontOfSize:12]];
+        [lb_info setTextColor:[UIColor darkGrayColor]];
+        [lb_info setFrame:CGRectMake(xi, yi, 100, 20)];
+        [self.contentView addSubview:lb_info];
+        _lb_time.text=gather.time;
+        _lb_title.text=gather.title;
+        
+    }
+    return self;
+}
+@end

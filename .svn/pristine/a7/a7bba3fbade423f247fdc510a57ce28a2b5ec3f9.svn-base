@@ -1,0 +1,23 @@
+//
+//  XHSegmented.h
+//  XingHui
+//
+//  Created by wangpei on 15/6/10.
+//  Copyright (c) 2015年 wangpei. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+@protocol XHSegmentedDelegate;
+@interface XHSegmented : UIView
+{
+    UIView *bottom_line;
+}
+-(id)initWithTitle:(NSArray *)arr;
+@property(nonatomic,strong)id<XHSegmentedDelegate> delegate;
+@end
+
+@protocol XHSegmentedDelegate <NSObject>
+
+-(void)SegmentClickDelegateWithIndex:(NSInteger)index;
+
+@end

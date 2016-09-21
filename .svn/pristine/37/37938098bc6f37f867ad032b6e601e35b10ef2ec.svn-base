@@ -1,0 +1,15 @@
+//
+//  NSDate+MWDate.h
+//  MagicWindowSampleApp
+//
+//  Created by JackLiu on 14-7-23.
+//  Copyright (c) 2014年 MagicWindow. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface NSDate (Category)
+
++ (NSString *)getStringFromDate:(NSDate *)date withFormat:(NSString *)format;
+
+@end

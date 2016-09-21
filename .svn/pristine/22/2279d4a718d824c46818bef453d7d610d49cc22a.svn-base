@@ -1,0 +1,35 @@
+//
+//  XHFindItemTableViewCell.m
+//  XingHui
+//
+//  Created by wangpei on 15/6/1.
+//  Copyright (c) 2015年 wangpei. All rights reserved.
+//
+
+#import "XHFindItemTableViewCell.h"
+
+@implementation XHFindItemTableViewCell
+
+- (void)awakeFromNib {
+    // Initialization code
+}
+-(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifiers data:(NSDictionary *)dic
+{
+    self =  [[[NSBundle mainBundle] loadNibNamed:@"XHFindItemTableViewCell"owner:nil options:nil] objectAtIndex:0];
+    
+    if (self) {
+        self.restorationIdentifier=reuseIdentifiers;
+        
+        
+        self.lb_title.text=dic[@"title"];
+        [self.icon setImage:[UIImage imageNamed:dic[@"icon"]]];
+    }
+    return self;
+}
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+
+@end

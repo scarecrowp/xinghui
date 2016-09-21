@@ -1,0 +1,20 @@
+dependencies: \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/MWPhotoBrowser/Classes/MWGridViewController.m \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/MWPhotoBrowser/Classes/MWGridViewController.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/MWPhotoBrowser/Classes/MWPhotoBrowser.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/MWPhotoBrowser/Classes/MWPhoto.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/MWPhotoBrowser/Classes/MWPhotoProtocol.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/MWPhotoBrowser/Classes/MWCaptionView.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/MWPhotoBrowser/Libraries/PSTCollectionView/PSTCollectionView.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/MWPhotoBrowser/Libraries/PSTCollectionView/PSTCollectionViewLayout.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/MWPhotoBrowser/Libraries/PSTCollectionView/PSTCollectionViewCommon.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/MWPhotoBrowser/Libraries/PSTCollectionView/PSTCollectionViewFlowLayout.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/MWPhotoBrowser/Libraries/PSTCollectionView/PSTCollectionViewCell.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/MWPhotoBrowser/Libraries/PSTCollectionView/PSTCollectionViewController.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/MWPhotoBrowser/Libraries/PSTCollectionView/PSTCollectionViewUpdateItem.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/MWPhotoBrowser/Classes/MWGridCell.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/MWPhotoBrowser/Classes/MWPhotoBrowserPrivate.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/MWPhotoBrowser/Classes/MWZoomingScrollView.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/MWPhotoBrowser/Classes/MWTapDetectingImageView.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/MWPhotoBrowser/Classes/MWTapDetectingView.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/3rdparty/MWPhotoBrowser/Classes/MWCommon.h

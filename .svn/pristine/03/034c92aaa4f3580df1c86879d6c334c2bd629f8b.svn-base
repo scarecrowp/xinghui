@@ -1,0 +1,32 @@
+//
+//  JLBaiduMapLocationHelper.h
+//  QiaoGu
+//
+//  Created by JackLiu on 14-9-11.
+//  Copyright (c) 2014年 ZXInsight. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@protocol JLBaiduLocationHelperDelegate;
+
+@interface JLBaiduMapLocationHelper : NSObject
+
+
+@property (nonatomic,strong)id<JLBaiduLocationHelperDelegate>delegate;
+
+//转换GPS坐标至百度坐标
++ (CLLocationCoordinate2D )convertBaiduCoorFromGPS:(CLLocationCoordinate2D)gpsCoordinate;
+
+- (void)startLacation;
+- (void)stop;
+@end
+
+@protocol JLBaiduLocationHelperDelegate <NSObject>
+
+@required
+
+- (void)didUpdateToLocation:(NSDictionary *)addressDictionary;
+- (void)updateLocationFailWithError:(NSError *)error;
+
+@end

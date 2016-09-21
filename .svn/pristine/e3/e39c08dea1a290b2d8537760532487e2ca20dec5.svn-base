@@ -1,0 +1,13 @@
+//
+//  XHHomeTableView.h
+//  XingHui
+//
+//  Created by wangpei on 15/5/25.
+//  Copyright (c) 2015年 wangpei. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface XHHomeTableView : UITableView<UITableViewDataSource,UITableViewDelegate>
+-(id)initWithFrame:(CGRect)rect;
+@end

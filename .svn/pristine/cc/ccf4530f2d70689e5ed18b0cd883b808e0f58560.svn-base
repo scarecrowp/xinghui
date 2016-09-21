@@ -1,0 +1,78 @@
+//
+//  XHSetUserNameViewController.m
+//  XingHui
+//
+//  Created by wangpei on 15/5/29.
+//  Copyright (c) 2015年 wangpei. All rights reserved.
+//
+
+#import "XHSetUserNameViewController.h"
+#import "XHUploadPhonebookViewController.h"
+@interface XHSetUserNameViewController ()
+
+@end
+
+@implementation XHSetUserNameViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setTitle:@"个人资料"];
+    // Do any additional setup after loading the view from its nib.
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    NSTimeInterval animationDuration = 0.30f;
+    [UIView beginAnimations:@"ResizeForKeyBoard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    
+    CGRect rect = CGRectMake(0.0,-textField.frame.origin.y,self.view.frame.size.width,self.view.frame.size.height);
+    self.view.frame =rect;
+    [UIView commitAnimations];
+
+    return YES;
+}
+-(BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+    
+    NSTimeInterval animationDuration = 0.30f;
+    [UIView beginAnimations:@"ResizeForKeyBoard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    
+    CGRect rect = CGRectMake(0.0, 0,self.view.frame.size.width,self.view.frame.size.height);
+    
+    self.view.frame =rect;
+    [UIView commitAnimations];return YES;
+}
+- (IBAction)sextStep:(id)sender {
+    XHUploadPhonebookViewController *upload =[[XHUploadPhonebookViewController alloc] init];
+    [XHUser sharedUser].industry=_tb_direct.text;
+    [XHUser sharedUser].job=_tb_job.text;
+    [XHUser sharedUser].username=_tb_name.text;
+    [XHUser sharedUser].company=_tb_company.text;
+    [XHUser sharedUser].birthday=_lb_birthday.text;
+    [self.navigationController pushViewController:upload animated:YES];
+}
+- (IBAction)select_birthday:(id)sender {
+}
+- (IBAction)hideKeybord:(id)sender {
+     [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
+}
+
+- (IBAction)select_industry:(id)sender {
+}
+@end

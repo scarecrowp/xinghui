@@ -1,0 +1,35 @@
+//
+//  XHMessageTableViewCell.m
+//  XingHui
+//
+//  Created by wangpei on 15/6/9.
+//  Copyright (c) 2015年 wangpei. All rights reserved.
+//
+
+#import "XHMessageTableViewCell.h"
+#import "XHMessage.h"
+@implementation XHMessageTableViewCell
+
+- (void)awakeFromNib {
+    // Initialization code
+}
+-(id)initWithMessage:(XHMessage *)message
+{
+    self =  [[[NSBundle mainBundle] loadNibNamed:@"XHMessageTableViewCell"owner:nil options:nil] objectAtIndex:0];
+    if (self) {
+        [self setRestorationIdentifier:@"XHMessageTableViewCell"];
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.lb_info.text=message.msgInfo;
+        self.lb_time.text=message.time;
+        self.lb_title.text =message.title;
+        [self.img setImage:[UIImage imageNamed:message.userHead]];
+    }
+    return self;
+}
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+
+@end

@@ -1,0 +1,26 @@
+//
+//  XHCreateGatherViewController.h
+//  XingHui
+//
+//  Created by gaoyuerui on 15/6/7.
+//  Copyright (c) 2015年 wangpei. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "XHDatePicker.h"
+@interface XHCreateGatherViewController : BasicViewController<DatePickerDeleGate,UIImagePickerControllerDelegate,UIActionSheetDelegate,UINavigationControllerDelegate>
+@property (strong, nonatomic) IBOutlet UIView *baseview;
+@property (weak, nonatomic) IBOutlet UITextField *tb_title;
+- (IBAction)selectBeginTime:(id)sender;
+- (IBAction)selectEndTime:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *lb_begintime;
+@property (weak, nonatomic) IBOutlet UILabel *lb_endtime;
+@property (weak, nonatomic) IBOutlet UILabel *lb_paytype;
+@property (weak, nonatomic) IBOutlet UILabel *lb_tips;
+- (IBAction)selectPic:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *lb_personnum;
+@property (weak, nonatomic) IBOutlet UIButton *img_head;
+- (IBAction)selectGatherType:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *lb_gatherType;
+@property(nonatomic,strong)UIPickerView *datepicker;
+@end

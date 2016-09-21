@@ -1,0 +1,52 @@
+//
+//  XHMyGatherTableViewCell.m
+//  XingHui
+//
+//  Created by wangpei on 15/6/9.
+//  Copyright (c) 2015年 wangpei. All rights reserved.
+//
+
+#import "XHMyGatherTableViewCell.h"
+#import "XHGather.h"
+@implementation XHMyGatherTableViewCell
+
+- (void)awakeFromNib {
+    // Initialization code
+}
+-(id)initWithGather:(XHGather *)gather
+{
+    self=[[[NSBundle mainBundle] loadNibNamed:@"XHMyGatherTableViewCell" owner:nil options:nil] objectAtIndex:0];
+ 
+    if (self) {
+        [self setRestorationIdentifier:@"XHMyGatherTableViewCell"];
+        self.lb_distance.text =gather.distance;
+        self.lb_location.text=gather.location;
+        self.lb_time.text=gather.time;
+        self.lb_title.text=gather.title;
+        [self.img setImage:[UIImage imageNamed:gather.img]];
+        int xi=123;int w =5;int yi=70;
+        for (int i=0; i<4; i++) {
+            UIImageView *hpic=[[UIImageView alloc] initWithFrame:CGRectMake(xi, yi, 18, 18)];
+            hpic.layer.masksToBounds=YES;
+            hpic.layer.cornerRadius=9;
+            [hpic setImage:[UIImage imageNamed:@"head_test"]];
+            xi=xi+w+18;
+            [self.contentView addSubview:hpic];
+        }
+        UILabel *lb_info=[[UILabel alloc] init];
+        lb_info.text=[NSString stringWithFormat:@"等%d位好友参加",4];
+        [lb_info setFont:[UIFont systemFontOfSize:12]];
+        [lb_info setTextColor:[UIColor darkGrayColor]];
+        [lb_info setFrame:CGRectMake(xi, yi, 100, 20)];
+        [self.contentView addSubview:lb_info];
+
+    }
+    return self;
+}
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+
+@end

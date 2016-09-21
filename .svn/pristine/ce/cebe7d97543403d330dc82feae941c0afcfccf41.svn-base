@@ -1,0 +1,23 @@
+//
+//  XHDatePicker.h
+//  XingHui
+//
+//  Created by wangpei on 15/6/16.
+//  Copyright (c) 2015年 wangpei. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+@protocol DatePickerDeleGate;
+@interface XHDatePicker : UIView<UIPickerViewDataSource,UIPickerViewDelegate>
+@property (weak, nonatomic) IBOutlet UIPickerView *datepicker;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
+- (IBAction)cancelSelect:(id)sender;
+- (IBAction)selectDate:(id)sender;
+-(id)initWithFrames:(CGRect)frame;
+@property(nonatomic,strong)id<DatePickerDeleGate> pickerdelegate;
+@end
+@protocol DatePickerDeleGate <NSObject>
+
+-(void)selectdone:(NSString *)datestr;
+-(void)cancel;
+@end

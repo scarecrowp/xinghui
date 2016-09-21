@@ -1,0 +1,31 @@
+dependencies: \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/home/XHGatherDetailViewController.m \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/home/XHGatherDetailViewController.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/Entity/XHGather.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/Categories/UILable+Category.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/Categories/UIImage+Category.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/View/cell/CommentCell.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/Model/GatherDetailManage.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/View/cell/gatherDetail/GatherDetailBottom.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ThirdParty/JKAlertDialog/JKAlertDialog.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/View/cell/XHUserJoinCell.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/Model/GatherManage.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/View/commen/XHEmptyView.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Find/XHPersonDetsailViewController.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Message/Class/Chat/ChatView/ChatViewController.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ThirdParty/libraries/ShareSDK.framework/Headers/ShareSDK.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ThirdParty/libraries/ShareSDK.framework/Headers/NSMutableDictionary+SSDKInit.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ThirdParty/libraries/ShareSDK.framework/Headers/SSDKTypeDefine.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ThirdParty/libraries/ShareSDK.framework/Headers/NSMutableDictionary+SSDKShare.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ThirdParty/libraries/ShareSDK.framework/Headers/SSDKImage.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ThirdParty/libraries/ShareSDK.framework/Headers/SSDKData.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ThirdParty/libraries/ShareSDK.framework/Headers/SSDKUserQueryConditional.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ThirdParty/libraries/ShareSDK.framework/Headers/SSDKContentEntity.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ThirdParty/libraries/ShareSDK.framework/Headers/SSDKUser.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ThirdParty/libraries/ShareSDK.framework/Headers/SSDKCredential.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ThirdParty/libraries/ShareSDK.framework/Headers/SSDKAuthViewStyle.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ThirdParty/libraries/ShareSDKUI.framework/Headers/ShareSDK+SSUI.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ThirdParty/libraries/ShareSDKUI.framework/Headers/SSUIShareActionSheetController.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ThirdParty/libraries/ShareSDKUI.framework/Headers/SSUITypeDef.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ThirdParty/libraries/ShareSDKUI.framework/Headers/SSUIShareContentEditorViewController.h \
+  /Users/gaoyuerui/Desktop/xinghui/XingHui/ViewControl/Gather/XHAddFriendVC.h

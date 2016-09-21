@@ -1,0 +1,16 @@
+//
+//  XHSetUpViewController.h
+//  XingHui
+//
+//  Created by wangpei on 15/6/5.
+//  Copyright (c) 2015年 wangpei. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface XHSetUpViewController : BasicViewController
+@property (strong, nonatomic) IBOutlet UIView *view_base;
+@property (strong, nonatomic) IBOutlet UIView *view_other;
+@property (strong, nonatomic) IBOutlet UIView *view_connect;
+
+@end
